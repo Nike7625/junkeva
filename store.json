@@ -1,0 +1,241 @@
+{
+  "samples": true,
+  "settings": {
+    "name": "JunkEva",
+    "tagline": "Street style and everyday clothing, delivered across India.",
+    "announcement": "Free shipping above ₹999 · Cash on delivery available",
+    "whatsapp": "",
+    "upiId": "",
+    "payeeName": "JunkEva",
+    "razorpayLink": "",
+    "shipFee": 79,
+    "freeShipAbove": 999,
+    "codEnabled": true,
+    "codFee": 30
+  },
+  "products": [
+    {
+      "id": "m1",
+      "name": "Oversized Cotton Tee",
+      "cat": "Men",
+      "type": "top",
+      "color": "#2B3F8F",
+      "price": 499,
+      "mrp": 999,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "desc": "240 GSM cotton jersey with a dropped shoulder. Machine washable.",
+      "img": "",
+      "inStock": true
+    },
+    {
+      "id": "m2",
+      "name": "Slim Fit Chinos",
+      "cat": "Men",
+      "type": "bottom",
+      "color": "#C8B79B",
+      "price": 899,
+      "mrp": 1599,
+      "sizes": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "desc": "Stretch cotton twill, mid rise, tapered leg.",
+      "img": "",
+      "inStock": true
+    },
+    {
+      "id": "m3",
+      "name": "Washed Denim Jacket",
+      "cat": "Men",
+      "type": "outer",
+      "color": "#4C6A9A",
+      "price": 1499,
+      "mrp": 2799,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "desc": "Non-stretch washed denim with button front and two chest pockets.",
+      "img": "",
+      "inStock": true
+    },
+    {
+      "id": "m4",
+      "name": "Linen Blend Shirt",
+      "cat": "Men",
+      "type": "top",
+      "color": "#A9B8A0",
+      "price": 799,
+      "mrp": 1399,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "desc": "Breathable linen-cotton blend with a relaxed collar. Good for summers.",
+      "img": "",
+      "inStock": true
+    },
+    {
+      "id": "m5",
+      "name": "Fleece Joggers",
+      "cat": "Men",
+      "type": "bottom",
+      "color": "#22262F",
+      "price": 699,
+      "mrp": 1299,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "desc": "Brushed fleece inside, drawcord waist and zip pockets.",
+      "img": "",
+      "inStock": true
+    },
+    {
+      "id": "w1",
+      "name": "Block Print Cotton Kurti",
+      "cat": "Women",
+      "type": "dress",
+      "color": "#B5543A",
+      "price": 649,
+      "mrp": 1199,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "desc": "Straight-cut kurti in soft cotton with a block-print yoke.",
+      "img": "",
+      "inStock": true
+    },
+    {
+      "id": "w2",
+      "name": "Cotton Palazzo",
+      "cat": "Women",
+      "type": "bottom",
+      "color": "#D9A21B",
+      "price": 499,
+      "mrp": 899,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "desc": "Wide-leg palazzo with elastic waist. Pairs with any kurti.",
+      "img": "",
+      "inStock": true
+    },
+    {
+      "id": "w3",
+      "name": "Anarkali Suit Set",
+      "cat": "Women",
+      "type": "dress",
+      "color": "#7A2A3A",
+      "price": 1799,
+      "mrp": 3499,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "desc": "Flared anarkali with dupatta and straight pants. Rayon blend.",
+      "img": "",
+      "inStock": true
+    },
+    {
+      "id": "w4",
+      "name": "High Rise Jeans",
+      "cat": "Women",
+      "type": "bottom",
+      "color": "#4C6A9A",
+      "price": 999,
+      "mrp": 1899,
+      "sizes": [
+        "26",
+        "28",
+        "30",
+        "32",
+        "34"
+      ],
+      "desc": "Stretch denim, high rise, ankle length.",
+      "img": "",
+      "inStock": true
+    },
+    {
+      "id": "k1",
+      "name": "Graphic Kids Tee",
+      "cat": "Kids",
+      "type": "top",
+      "color": "#7FA6D6",
+      "price": 299,
+      "mrp": 549,
+      "sizes": [
+        "2-3Y",
+        "4-5Y",
+        "6-7Y",
+        "8-9Y"
+      ],
+      "desc": "Soft combed cotton tee with a fun print.",
+      "img": "",
+      "inStock": true
+    },
+    {
+      "id": "k2",
+      "name": "Dungaree Set",
+      "cat": "Kids",
+      "type": "bottom",
+      "color": "#8DA7C4",
+      "price": 599,
+      "mrp": 999,
+      "sizes": [
+        "2-3Y",
+        "4-5Y",
+        "6-7Y",
+        "8-9Y"
+      ],
+      "desc": "Cotton dungaree with a matching inner tee.",
+      "img": "",
+      "inStock": true
+    },
+    {
+      "id": "k3",
+      "name": "Kurta Pyjama Set",
+      "cat": "Kids",
+      "type": "top",
+      "color": "#E0B34F",
+      "price": 799,
+      "mrp": 1399,
+      "sizes": [
+        "2-3Y",
+        "4-5Y",
+        "6-7Y",
+        "8-9Y"
+      ],
+      "desc": "Festive set in soft cotton with contrast piping.",
+      "img": "",
+      "inStock": false
+    }
+  ]
+}
