@@ -233,8 +233,8 @@ function httpsOk(u){return /^https:\/\//i.test(String(u||'').trim())}
 
 var ui={cat:'All',q:'',sort:'featured',panel:null,pid:null,sel:{size:null,qty:1},canEdit:false,tab:'settings',dirty:false,busy:false,editing:null,confirmDel:null,up:false,last:null,perr:''};
 var cart=lsGet('je_cart',[]);
-var orders=lsGet('je_orders',[]);
-var form=Object.assign({name:'',phone:'',address:'',city:'',pin:'',notes:'',pay:'',ref:''},lsGet('je_cust',{}));
+var orders=[];
+var form={name:'',phone:'',address:'',city:'',pin:'',notes:'',pay:'',ref:''};
 form.pay='';form.ref='';
 function saveCart(){lsSet('je_cart',cart)}
 
@@ -272,8 +272,8 @@ function upiUri(amount){
  return 'upi://pay?pa='+encodeURIComponent(s.upiId)+'&pn='+encodeURIComponent(s.payeeName||s.name)+'&am='+Number(amount).toFixed(2)+'&cu=INR&tn='+encodeURIComponent('Order payment');
 }
 function payText(o){
- if(o.pay==='upi')return 'UPI, paid '+inr(o.total)+', reference '+o.ref;
- if(o.pay==='rzp')return 'Razorpay, paid '+inr(o.total)+', payment ID '+o.ref;
+ if(o.pay==='upi')return 'UPI payment pending verification, '+inr(o.total)+', reference '+o.ref;
+ if(o.pay==='rzp')return 'Razorpay payment pending verification, '+inr(o.total)+', payment ID '+o.ref;
  if(o.pay==='cod')return 'Cash on delivery, collect '+inr(o.total);
  return 'To be confirmed on WhatsApp';
 }
@@ -523,9 +523,6 @@ function renderLayer(){
  if(b&&keep)b.scrollTop=keep;
  if(fresh){var sh=L.querySelector('.sheet');if(sh)sh.focus({preventScroll:true})}
  var q=document.getElementById('qr');
- if(q&&window.QRCode){
-  try{new QRCode(q,{text:upiUri(totals('upi').total),width:168,height:168,colorDark:'#0b1020',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M})}catch(e){}
- }
 }
 function openPanel(name){ui.panel=name;renderLayer()}
 function closePanel(){ui.panel=null;ui.editing=null;ui.confirmDel=null;renderLayer()}
@@ -555,7 +552,7 @@ function placeOrder(){
  var t=totals(form.pay);
  var ph=form.phone.replace(/\D/g,'').slice(-10);
  var o={id:newId(),at:Date.now(),items:cart.map(function(i){var p=prod(i.pid);return {name:p.name,size:i.size,qty:i.qty,price:p.price}}),sub:t.sub,ship:t.ship,cod:t.cod,total:t.total,name:form.name.trim(),phone:ph,address:form.address.trim(),city:form.city.trim(),pin:form.pin.trim(),notes:form.notes.trim(),pay:form.pay,ref:form.ref.trim()};
- orders.unshift(o);orders=orders.slice(0,20);lsSet('je_orders',orders);
+ orders.unshift(o);orders=orders.slice(0,20);
  cart=[];saveCart();form.ref='';
  ui.last=o;renderHeader();openPanel('done');
 }
@@ -640,7 +637,6 @@ app.addEventListener('input',function(e){
  if(el.id==='sort'){ui.sort=el.value;renderGrid();return}
  if(el.dataset.f){
   var k=el.dataset.f;form[k]=el.value;
-  if(k!=='ref'&&k!=='pay'&&k!=='notes'){var c={};['name','phone','address','city','pin'].forEach(function(x){c[x]=form[x]});lsSet('je_cust',c)}
   var er=document.getElementById('err');if(er)er.textContent='';
   return;
  }
